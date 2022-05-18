@@ -14,9 +14,9 @@ class Login extends React.Component {
   }
 
   handleInputChange = ({ target }) => {
-    const { name, value } = target;
+    const { id, value } = target;
     this.setState(
-      () => ({ [name]: value }),
+      () => ({ [id]: value }),
       () => this.validateInputs(),
     );
   }
@@ -48,7 +48,7 @@ class Login extends React.Component {
           E-mail:
           <input
             type="email"
-            name="loginMail"
+            id="loginMail"
             data-testid="email-input"
             value={ loginMail }
             onChange={ this.handleInputChange }
@@ -58,7 +58,7 @@ class Login extends React.Component {
           Senha:
           <input
             type="password"
-            name="loginPassword"
+            id="loginPassword"
             data-testid="password-input"
             value={ loginPassword }
             onChange={ this.handleInputChange }
