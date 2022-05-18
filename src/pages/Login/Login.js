@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
+import { saveEmail } from '../../redux/actions';
 
 class Login extends React.Component {
   constructor() {
@@ -36,6 +39,7 @@ class Login extends React.Component {
 
   render() {
     const { loginMail, loginPassword, isButtonDisabled } = this.state;
+    const { sendEmail } = this.props;
     return (
       <>
         <div>Login!</div>
@@ -59,10 +63,26 @@ class Login extends React.Component {
             onChange={ this.handleInputChange }
           />
         </label>
-        <button type="button" disabled={ isButtonDisabled }>Entrar</button>
+        <button
+          type="button"
+          disabled={ isButtonDisabled }
+          onClick={ () => sendEmail(loginMail) }
+        >
+          Entrar
+
+        </button>
       </>
     );
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  sendEmail: (emailToSave) => dispatch(saveEmail(emailToSave)),
+});
+
+Login.propTypes = {
+  sendEmail: propTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(Login);
+// export default Login;
