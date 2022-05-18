@@ -6,18 +6,36 @@ class Login extends React.Component {
     this.state = {
       loginMail: '',
       loginPassword: '',
+      isButtonDisabled: true,
     };
   }
 
   handleInputChange = ({ target }) => {
     const { name, value } = target;
+    this.setState(
+      () => ({ [name]: value }),
+      () => this.validateInputs(),
+    );
+  }
+
+  // https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
+
+  validateInputs = () => {
+    const emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const minPasswordLength = 6;
+
+    const { loginMail, loginPassword } = this.state;
+
+    const isValid = (emailFormat.test(loginMail)
+      && loginPassword.length >= minPasswordLength);
+
     this.setState({
-      [name]: value,
+      isButtonDisabled: !isValid,
     });
   }
 
   render() {
-    const { loginMail, loginPassword } = this.state;
+    const { loginMail, loginPassword, isButtonDisabled } = this.state;
     return (
       <>
         <div>Login!</div>
@@ -41,7 +59,7 @@ class Login extends React.Component {
             onChange={ this.handleInputChange }
           />
         </label>
-
+        <button type="button" disabled={ isButtonDisabled }>Entrar</button>
       </>
     );
   }
