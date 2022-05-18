@@ -12,7 +12,7 @@ class ExpenseForm extends React.Component {
       expenseDescription: '',
       currencyUsed: 'USD',
       paymentMethod: 'Dinheiro',
-      expenseTag: 'Alimentação',
+      expenseTag: '',
     };
   }
 
