@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 import { getCurrencyFromAPI } from '../actions';
 import Header from '../components/Header';
 import ExpenseForm from '../components/ExpenseForm';
+import ExpenseTable from '../components/ExpenseTable';
 
 class Wallet extends React.Component {
   // using componentDidMount to check the api return~
@@ -23,6 +24,7 @@ class Wallet extends React.Component {
       <>
         <Header />
         <ExpenseForm />
+        <ExpenseTable />
         <div>TrybeWallet</div>
       </>
     );
