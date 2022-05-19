@@ -7,13 +7,6 @@ import ExpenseForm from '../components/ExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
 
 class Wallet extends React.Component {
-  // using componentDidMount to check the api return~
-  // async componentDidMount() {
-  //   const apiresult = await fetch('https://economia.awesomeapi.com.br/json/all');
-  //   const apiData = await apiresult.json();
-  //   console.log(apiData);
-  // }
-
   componentDidMount() {
     const { saveCurrenciesToGlobalState } = this.props;
     saveCurrenciesToGlobalState();
@@ -40,5 +33,3 @@ Wallet.propTypes = {
 };
 
 export default connect(null, mapDispatchToProps)(Wallet);
-
-// export default Wallet;
