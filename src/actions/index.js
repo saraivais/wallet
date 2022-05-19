@@ -17,11 +17,12 @@ export const getCurrencies = (currencyArray) => ({
 export function getCurrencyFromAPI() {
   return async (dispatch) => {
     dispatch(requestCurrencies());
+
     const apiReturn = await fetch('https://economia.awesomeapi.com.br/json/all');
     const apiData = await apiReturn.json();
-    // console.log(apiData);
     const allCurrArray = Object.keys(apiData);
     const filteredCurrencies = allCurrArray.filter((currencies) => currencies !== 'USDT');
+
     dispatch(getCurrencies(filteredCurrencies));
   };
 }
@@ -35,8 +36,6 @@ const saveExpenses = (formObject, id, exchangeRates) => ({
   },
 });
 
-// export const calculateExpenses = () => ({ type: CALCULATE_EXPENSES });
-
 // thunk thingy to get currency objects~
 export function getCurrencyListFromAPI(formObject, id) {
   return async (dispatch) => {
@@ -44,16 +43,8 @@ export function getCurrencyListFromAPI(formObject, id) {
     const apiReturn = await fetch('https://economia.awesomeapi.com.br/json/all');
     const apiData = await apiReturn.json();
     dispatch(saveExpenses(formObject, id, apiData));
-    // dispatch(calculateExpenses());
   };
 }
 
 export const removeExpense = (expenseToDeleteID) => (
   { type: REMOVE_EXPENSE, payload: expenseToDeleteID });
-
-// export function removeExpenseAndRecalculateTotal(idToRemove) {
-//   return async (dispatch) => {
-//     await dispatch(removeExpense(idToRemove));
-//     // dispatch(calculateExpenses());
-//   };
-// }
