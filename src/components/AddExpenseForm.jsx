@@ -126,22 +126,24 @@ class AddExpenseForm extends React.Component {
 
         <button
           type="button"
-          onClick={ editMode
-            ? () => editChange(allExpenses, idToEdit, { value: valueSpent,
-              description: expenseDescription,
-              currency: currencyUsed,
-              method: paymentMethod,
-              tag: expenseTag })
-            : () => {
-              saveThisExpense({
-                value: valueSpent,
+          onClick={
+            editMode
+              ? () => editChange(allExpenses, idToEdit, { value: valueSpent,
                 description: expenseDescription,
                 currency: currencyUsed,
                 method: paymentMethod,
-                tag: expenseTag,
-              }, nextId);
-              this.resetForms();
-          } }
+                tag: expenseTag })
+              : (() => {
+                saveThisExpense({
+                  value: valueSpent,
+                  description: expenseDescription,
+                  currency: currencyUsed,
+                  method: paymentMethod,
+                  tag: expenseTag,
+                }, nextId);
+                this.resetForms();
+              })
+          }
         >
           { editMode ? 'Editar despesa' : 'Adicionar despesa'}
         </button>
