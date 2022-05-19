@@ -4,6 +4,8 @@ import {
   GET_CURRENCIES,
   SAVE_EXPENSES,
   REMOVE_EXPENSE,
+  EDIT_MODE_ON,
+  UPDATE_EXPENSES,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -24,6 +26,10 @@ function wallet(state = INITIAL_STATE, action) {
       ...state,
       expenses: state.expenses.filter(({ id }) => id !== action.payload),
     };
+  case EDIT_MODE_ON:
+    return { ...state, editMode: true, idToEdit: action.payload };
+  case UPDATE_EXPENSES:
+    return { ...state, expenses: action.payload };
   default:
     return state;
   }
