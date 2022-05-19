@@ -3,10 +3,8 @@ import {
   REQUEST_CURRENCIES,
   GET_CURRENCIES,
   SAVE_EXPENSES,
-  // CALCULATE_EXPENSES,
   REMOVE_EXPENSE,
 } from '../actions';
-// import expenseCalculator from '../helpers/ExpenseCalculator';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -21,8 +19,6 @@ function wallet(state = INITIAL_STATE, action) {
     return state;
   case SAVE_EXPENSES:
     return { ...state, expenses: [...state.expenses, action.payload] };
-  // case CALCULATE_EXPENSES:
-  //   return { ...state, total: expenseCalculator(state.expenses) };
   case REMOVE_EXPENSE:
     return {
       ...state,
