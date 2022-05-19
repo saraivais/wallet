@@ -1,11 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { removeExpense } from '../actions';
+import { removeExpense, switchEditMode } from '../actions';
 
 class ExpenseTable extends React.Component {
   render() {
-    const { allExpenses, deleteThisExpense } = this.props;
+    const { allExpenses, deleteThisExpense, turnEditModeOn } = this.props;
     return (
       <table>
         <tbody>
@@ -35,6 +35,7 @@ class ExpenseTable extends React.Component {
                   <button
                     type="button"
                     data-testid="edit-btn"
+                    onClick={ () => turnEditModeOn(id) }
                   >
                     Editar
                   </button>
@@ -61,11 +62,13 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   deleteThisExpense:
   (idToDelete) => dispatch(removeExpense(idToDelete)),
+  turnEditModeOn: (id) => dispatch(switchEditMode(id)),
 });
 
 ExpenseTable.propTypes = {
   allExpenses: propTypes.arrayOf(propTypes.shape()).isRequired,
   deleteThisExpense: propTypes.func.isRequired,
+  turnEditModeOn: propTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseTable);
