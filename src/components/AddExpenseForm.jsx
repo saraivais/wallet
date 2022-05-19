@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCurrencyListFromAPI } from '../actions';
+import { getCurrencyListFromAPI, updateEditChanges } from '../actions';
 
 class AddExpenseForm extends React.Component {
   constructor() {
@@ -34,7 +34,15 @@ class AddExpenseForm extends React.Component {
   }
 
   render() {
-    const { currencyList, nextId, saveThisExpense } = this.props;
+    const {
+      currencyList,
+      nextId,
+      saveThisExpense,
+      editMode,
+      idToEdit,
+      allExpenses,
+      editChange,
+    } = this.props;
     const {
       valueSpent,
       expenseDescription,
@@ -74,6 +82,7 @@ class AddExpenseForm extends React.Component {
             id="currencyUsed"
             value={ currencyUsed }
             onChange={ this.handleInputChange }
+            data-testid="currency-input"
           >
             {currencyList
               .map((currency, index) => (
@@ -117,18 +126,24 @@ class AddExpenseForm extends React.Component {
 
         <button
           type="button"
-          onClick={ () => {
-            saveThisExpense({
-              value: valueSpent,
+          onClick={ editMode
+            ? () => editChange(allExpenses, idToEdit, { value: valueSpent,
               description: expenseDescription,
               currency: currencyUsed,
               method: paymentMethod,
-              tag: expenseTag,
-            }, nextId);
-            this.resetForms();
+              tag: expenseTag })
+            : () => {
+              saveThisExpense({
+                value: valueSpent,
+                description: expenseDescription,
+                currency: currencyUsed,
+                method: paymentMethod,
+                tag: expenseTag,
+              }, nextId);
+              this.resetForms();
           } }
         >
-          Adicionar despesa
+          { editMode ? 'Editar despesa' : 'Adicionar despesa'}
         </button>
       </form>
     );
@@ -138,16 +153,31 @@ class AddExpenseForm extends React.Component {
 const mapStateToProps = (state) => ({
   currencyList: state.wallet.currencies,
   nextId: state.wallet.expenses.length,
+  editMode: state.wallet.editMode,
+  allExpenses: state.wallet.expenses,
+  idToEdit: state.wallet.idToEdit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   saveThisExpense: (formObject, id) => dispatch(getCurrencyListFromAPI(formObject, id)),
+  editChange: (oldExpensesArray, idToEdit, newValueObjects) => dispatch(
+    updateEditChanges(oldExpensesArray, idToEdit, newValueObjects),
+  ),
 });
 
 AddExpenseForm.propTypes = {
   currencyList: propTypes.arrayOf(propTypes.string).isRequired,
   nextId: propTypes.number.isRequired,
   saveThisExpense: propTypes.func.isRequired,
+  editMode: propTypes.bool,
+  idToEdit: propTypes.number,
+  allExpenses: propTypes.arrayOf(propTypes.shape()).isRequired,
+  editChange: propTypes.func.isRequired,
+};
+
+AddExpenseForm.defaultProps = {
+  editMode: false,
+  idToEdit: 0,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddExpenseForm);
