@@ -150,7 +150,4 @@ ExpenseForm.propTypes = {
   saveThisExpense: propTypes.func.isRequired,
 };
 
-// export default ExpenseForm;
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseForm);
-
-// Atenção nesse ponto: você deverá fazer uma requisição para API e buscar a cotação no momento que o botão de `Adicionar despesa` for apertado. Para isso você deve utilizar um thunk.
