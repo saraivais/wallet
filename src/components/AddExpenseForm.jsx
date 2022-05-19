@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrencyListFromAPI } from '../actions';
 
-class ExpenseForm extends React.Component {
+class AddExpenseForm extends React.Component {
   constructor() {
     super();
 
@@ -144,10 +144,10 @@ const mapDispatchToProps = (dispatch) => ({
   saveThisExpense: (formObject, id) => dispatch(getCurrencyListFromAPI(formObject, id)),
 });
 
-ExpenseForm.propTypes = {
+AddExpenseForm.propTypes = {
   currencyList: propTypes.arrayOf(propTypes.string).isRequired,
   nextId: propTypes.number.isRequired,
   saveThisExpense: propTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExpenseForm);
+export default connect(mapStateToProps, mapDispatchToProps)(AddExpenseForm);
