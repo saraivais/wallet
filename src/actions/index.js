@@ -48,12 +48,12 @@ export function getCurrencyListFromAPI(formObject, id) {
   };
 }
 
-const removeExpense = (expenseToDeleteID) => (
+export const removeExpense = (expenseToDeleteID) => (
   { type: REMOVE_EXPENSE, payload: expenseToDeleteID });
 
-export function removeExpenseAndRecalculateTotal(idToRemove) {
-  return async (dispatch) => {
-    await dispatch(removeExpense(idToRemove));
-    // dispatch(calculateExpenses());
-  };
-}
+// export function removeExpenseAndRecalculateTotal(idToRemove) {
+//   return async (dispatch) => {
+//     await dispatch(removeExpense(idToRemove));
+//     // dispatch(calculateExpenses());
+//   };
+// }
