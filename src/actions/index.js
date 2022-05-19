@@ -5,6 +5,8 @@ export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const SAVE_EXPENSES = 'SAVE_EXPENSES';
 export const CALCULATE_EXPENSES = 'CALCULATE_EXPENSES';
 export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
+export const EDIT_MODE_ON = 'EDIT_MODE_ON';
+export const UPDATE_EXPENSES = 'UPDATE_EXPENSES';
 
 export const saveEmail = (emailAdress) => ({ type: SAVE_EMAIL, payload: emailAdress });
 
@@ -48,3 +50,21 @@ export function getCurrencyListFromAPI(formObject, id) {
 
 export const removeExpense = (expenseToDeleteID) => (
   { type: REMOVE_EXPENSE, payload: expenseToDeleteID });
+
+export const switchEditMode = (idToEdit) => ({ type: EDIT_MODE_ON, payload: idToEdit });
+
+export const updateExpenses = (newExpenseArray) => (
+  { type: UPDATE_EXPENSES, payload: newExpenseArray });
+
+export function updateEditChanges(oldExpensesArray, idToEdit, newValueObjects) {
+  return (dispatch) => {
+    const objectToBeChanged = oldExpensesArray[idToEdit];
+    const newObject = {
+      id: idToEdit,
+      ...newValueObjects,
+      exchangeRates: objectToBeChanged.exchangeRates };
+    const newExpenses = oldExpensesArray
+      .map((expenseObj) => (expenseObj.id === idToEdit ? newObject : expenseObj));
+    dispatch(updateExpenses(newExpenses));
+  };
+}
