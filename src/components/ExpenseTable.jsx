@@ -1,12 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { removeExpenseAndRecalculateTotal } from '../actions';
+import { removeExpense } from '../actions';
 
 class ExpenseTable extends React.Component {
   render() {
     const { allExpenses, deleteThisExpense } = this.props;
-    // console.log(allExpenses);
     return (
       <table>
         <tbody>
@@ -55,7 +54,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   deleteThisExpense:
-  (idToDelete) => dispatch(removeExpenseAndRecalculateTotal(idToDelete)),
+  (idToDelete) => dispatch(removeExpense(idToDelete)),
 });
 
 ExpenseTable.propTypes = {
