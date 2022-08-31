@@ -18,14 +18,14 @@ class Header extends React.Component {
       <header className="wallet-header">
         <p className="user-email">
           Email:
-          <span>{ userMail }</span>
+          <span className="email">{ userMail }</span>
         </p>
         <p className="total-expense">
           Despesa Total:
-          <span>
+          <span className="amount">
             { this.expenseCalculator(allExpenses) || 0 }
           </span>
-          <span>BRL</span>
+          <span className="amount">BRL</span>
         </p>
       </header>
     );
