@@ -2,7 +2,23 @@
   align-items: center;
   background-color: #013222;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.header-title {
+  align-items: center;
+  display: flex;
+}
+
+.titleicon {
+  height: 80px;
+}
+
+.title {
+  color: rgb(225, 229, 220);
+  font-family: Playfair Display, serif;
+  padding: 0 8px;
 }
 
 .user-email {
