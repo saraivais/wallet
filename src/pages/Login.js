@@ -47,7 +47,7 @@ class Login extends React.Component {
       <div className="login-page">
         <div className="login-box">
           <div className="login-display">
-            <h1 className="login-title">Welcome to Wallet!</h1>
+            <h1 className="login-title">Boas vindas ao Wallet!</h1>
             <img className="wallet-icon" src={ wallet } alt="wallet-icon" />
           </div>
           <div className="login-form">
