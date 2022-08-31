@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
+import coins from '../icons/coin-stack-money-svgrepo-com.svg';
 import '../style/Header.css';
 
 class Header extends React.Component {
@@ -16,6 +17,10 @@ class Header extends React.Component {
     const { userMail, allExpenses } = this.props;
     return (
       <header className="wallet-header">
+        <div className="header-title">
+          <img className="titleicon" src={ coins } alt="coins-icon" />
+          <h1 className="title">Wallet</h1>
+        </div>
         <p className="user-email">
           Email:
           <span className="email">{ userMail }</span>
