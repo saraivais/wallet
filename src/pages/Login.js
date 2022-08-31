@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { saveEmail } from '../actions';
+import wallet from '../icons/wallet-svgrepo-com.svg';
+import '../style/Login.css';
 
 class Login extends React.Component {
   constructor() {
