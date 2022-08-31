@@ -2,14 +2,15 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { removeExpense, switchEditMode } from '../actions';
+import '../style/ExpenseTable.css';
 
 class ExpenseTable extends React.Component {
   render() {
     const { allExpenses, deleteThisExpense, turnEditModeOn } = this.props;
     return (
-      <table>
+      <table className="expense-table">
         <tbody>
-          <tr>
+          <tr className="description-row">
             <th>Descrição</th>
             <th>Tag</th>
             <th>Método de pagamento</th>
@@ -22,23 +23,27 @@ class ExpenseTable extends React.Component {
           </tr>
           {allExpenses
             .map(({ currency, description, id, method, tag, value, exchangeRates }) => (
-              <tr key={ id }>
+              <tr className="expense-row" key={ id }>
                 <td>{ description }</td>
-                <td>{ tag }</td>
+                <td className="greenish">{ tag }</td>
                 <td>{ method }</td>
-                <td>{ Number(value).toFixed(2) }</td>
+                <td className="greenish">{ Number(value).toFixed(2) }</td>
                 <td>{ exchangeRates[currency].name.split('/')[0]}</td>
-                <td>{ Number(exchangeRates[currency].ask).toFixed(2) }</td>
+                <td className="greenish">
+                  { Number(exchangeRates[currency].ask).toFixed(2) }
+                </td>
                 <td>{ (value * exchangeRates[currency].ask).toFixed(2) }</td>
-                <td>Real</td>
-                <td>
+                <td className="greenish">Real</td>
+                <td className="button-container">
                   <button
+                    className="edit-exclude-btn"
                     type="button"
                     onClick={ () => turnEditModeOn(id) }
                   >
                     Editar
                   </button>
                   <button
+                    className="edit-exclude-btn"
                     type="button"
                     onClick={ () => deleteThisExpense(id) }
                   >
