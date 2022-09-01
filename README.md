@@ -8,7 +8,7 @@
   <summary>Click to expand!</summary>
   
 ### Description 📝
-Wallet is an expense-tracker with a currency converter inside, where users can add, edit, remove and visualize their spendings. All expenses are converted to BRL (Brazilian Real). This project was developed during the Front-end module at Trybe in May, 2022.
+Wallet is an expense-tracker with a currency converter inside, where users can add, edit, remove and visualize their spendings. All expenses are converted to BRL (Brazilian Real). This project was developed during the Front-end module at [Trybe](https://www.betrybe.com/) in May, 2022.
 
 ### Technologies and Tools 🔧
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="js-logo"/>
@@ -53,7 +53,8 @@ Data for currency conversion came from [this API](https://docs.awesomeapi.com.br
   <summary>Clique para expandir!</summary>
   
 ### Descrição 📝
-O Wallet é um rastreador de despesas com um conversor de moeda dentro, onde os usuários podem adicionar, editar, remover e visualizar seus gastos. Todas as despesas são convertidas para BRL (Real Brasileiro). Este projeto foi desenvolvido durante o módulo Front-end no Trybe em maio de 2022.
+O Wallet é um rastreador de despesas com um conversor de moeda dentro, onde os usuários podem adicionar, editar, remover e visualizar seus gastos. Todas as despesas são convertidas para BRL (Real Brasileiro). Este projeto foi desenvolvido durante o módulo Front-end no [Trybe](https://www.betrybe.com/) em maio de 2022.
+
 ### Tecnologias e Ferramentas 🔧
 <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="js-logo"/>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react-logo"/>
