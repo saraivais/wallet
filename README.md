@@ -1,6 +1,6 @@
 <h1 align="center">WALLET 🪙</h1>
 
-![image](https://user-images.githubusercontent.com/96205316/187811294-d0cb1bcc-b27a-4c7b-8cd6-6213d9f5e5ac.png)
+![image](https://user-images.githubusercontent.com/96205316/187913513-4549c9dc-8273-42fd-9cc7-674e1c528d05.png)
 <p align="center">https://wallet-theta-seven.vercel.app/</p>
 
 ## English 🇬🇧
