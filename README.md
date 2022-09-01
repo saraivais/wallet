@@ -15,7 +15,7 @@ Wallet is an expense-tracker with a currency converter inside, where users can a
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css-logo"/>
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel-logo"/>
 
-Wallet was developed using **Javascript** and the **React** library. **React Router** was used to promote page navigation without page refresh and the **Redux** library made it possible to centralize and manage the application's state. Later on, I used **CSS3** for style and positioning and **Vercel** for this page's deployment.
+Wallet was developed using **Javascript** and the **React** library. **React Router** was used to promote page navigation without page refresh and the **Redux** library made it possible to centralize and manage the application's state. Later on, I used **CSS3** for style and positioning and **Vercel** for this page's deployment.   
 Data for currency conversion came from [this API](https://docs.awesomeapi.com.br/api-de-moedas).
 
 ### Installation 📋
@@ -59,7 +59,7 @@ O Wallet é um rastreador de despesas com um conversor de moeda dentro, onde os 
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css-logo"/>
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel-logo"/>
 
-Wallet foi desenvolvido usando **Javascript** e a biblioteca **React**. O **React Router** foi usado para promover a navegação sem atualização da página e a biblioteca **Redux** possibilitou centralizar e gerenciar o estado da aplicação. Mais tarde, usei **CSS3** para estilo e posicionamento e **Vercel** para fazer deploy desta página.
+Wallet foi desenvolvido usando **Javascript** e a biblioteca **React**. O **React Router** foi usado para promover a navegação sem atualização da página e a biblioteca **Redux** possibilitou centralizar e gerenciar o estado da aplicação. Mais tarde, usei **CSS3** para estilo e posicionamento e **Vercel** para fazer deploy desta página.   
 Os dados para conversão de moeda vieram [desta API](https://docs.awesomeapi.com.br/api-de-moedas).
 
 ### Instalação 📋
