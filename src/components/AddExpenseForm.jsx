@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrencyListFromAPI, updateEditChanges } from '../actions';
+import '../style/AddExpenseForm.css';
 
 class AddExpenseForm extends React.Component {
   constructor() {
@@ -52,37 +53,36 @@ class AddExpenseForm extends React.Component {
     } = this.state;
 
     return (
-      <form>
-
-        <label htmlFor="valueSpent">
-          Valor:
+      <form className="expense-form">
+        <label className="expense-form-label" htmlFor="valueSpent">
+          Valor
           <input
+            className="expense-form-input expense-value"
             id="valueSpent"
             type="number"
-            data-testid="value-input"
             value={ valueSpent }
             onChange={ this.handleInputChange }
           />
         </label>
 
-        <label htmlFor="expenseDescription">
-          Descrição:
+        <label className="expense-form-label" htmlFor="expenseDescription">
+          Descrição
           <input
+            className="expense-form-input expense-description"
             id="expenseDescription"
             type="text"
-            data-testid="description-input"
             value={ expenseDescription }
             onChange={ this.handleInputChange }
           />
         </label>
 
-        <label htmlFor="currencyUsed">
+        <label className="expense-form-label" htmlFor="currencyUsed">
           Moeda
           <select
+            className="expense-form-input"
             id="currencyUsed"
             value={ currencyUsed }
             onChange={ this.handleInputChange }
-            data-testid="currency-input"
           >
             {currencyList
               .map((currency, index) => (
@@ -96,10 +96,11 @@ class AddExpenseForm extends React.Component {
           </select>
         </label>
 
-        <label htmlFor="paymentMethod">
+        <label className="expense-form-label" htmlFor="paymentMethod">
+          Método de pagamento
           <select
+            className="expense-form-input"
             id="paymentMethod"
-            data-testid="method-input"
             value={ paymentMethod }
             onChange={ this.handleInputChange }
           >
@@ -109,10 +110,11 @@ class AddExpenseForm extends React.Component {
           </select>
         </label>
 
-        <label htmlFor="expenseTag">
+        <label className="expense-form-label" htmlFor="expenseTag">
+          Tipo
           <select
+            className="expense-form-input"
             id="expenseTag"
-            data-testid="tag-input"
             value={ expenseTag }
             onChange={ this.handleInputChange }
           >
@@ -125,6 +127,7 @@ class AddExpenseForm extends React.Component {
         </label>
 
         <button
+          className="expense-form-button"
           type="button"
           onClick={
             editMode

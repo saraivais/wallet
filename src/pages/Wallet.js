@@ -5,6 +5,7 @@ import { getCurrencyFromAPI } from '../actions';
 import Header from '../components/Header';
 import AddExpenseForm from '../components/AddExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
+import '../style/Wallet.css';
 
 class Wallet extends React.Component {
   componentDidMount() {
@@ -14,12 +15,11 @@ class Wallet extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="wallet-page">
         <Header />
         <AddExpenseForm />
         <ExpenseTable />
-        <div>TrybeWallet</div>
-      </>
+      </div>
     );
   }
 }

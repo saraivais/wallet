@@ -1,0 +1,43 @@
+.expense-table {
+  background-color: rgb(225, 229, 220);
+  width: 100vw;
+}
+
+.description-row {
+  background-color: rgb(1, 50, 34);
+  color: rgb(225, 229, 220);
+  font-family: Playfair Display, serif;
+  font-size: 0.8em;
+}
+
+.description-row th {
+  padding: 10px 0;
+}
+
+.expense-row {
+  color: rgb(1, 50, 34);
+  font-family: Roboto Condensed, sans-serif;
+  text-align: center;
+}
+
+.button-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.edit-exclude-btn {
+  background-color: rgb(37, 247, 98);
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-family: Roboto Condensed, sans-serif;
+  font-size: 0.85em;
+  margin: 3px 2px;
+  padding: 3px 8px;
+}
+
+.greenish {
+  background-color: rgba(37, 247, 98, 0.3);
+}

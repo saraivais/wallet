@@ -1,0 +1,50 @@
+.wallet-header {
+  align-items: center;
+  background-color: #013222;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.header-title {
+  align-items: center;
+  display: flex;
+}
+
+.titleicon {
+  height: 80px;
+}
+
+.title {
+  color: rgb(225, 229, 220);
+  font-family: Playfair Display, serif;
+  padding: 0 8px;
+}
+
+.user-email {
+  color: rgb(37, 247, 98);
+  font-family: Playfair Display, serif;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.email {
+  color: rgb(246, 247, 242);
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 400;
+  margin: 5px;
+}
+
+.total-expense {
+  color: rgb(37, 247, 98);
+  font-family: Playfair Display, serif;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.amount {
+  color: rgb(246, 247, 242);
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 400;
+  margin: 5px;
+}

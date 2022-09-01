@@ -1,6 +1,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
+import coins from '../icons/coin-stack-money-svgrepo-com.svg';
+import '../style/Header.css';
 
 class Header extends React.Component {
   expenseCalculator(expenseArray) {
@@ -14,20 +16,22 @@ class Header extends React.Component {
   render() {
     const { userMail, allExpenses } = this.props;
     return (
-      <header>
-        <div>
-          <p>
-            Email:
-            <span data-testid="email-field">{ userMail }</span>
-          </p>
-          <p>
-            Despesa Total:
-            <span data-testid="total-field">
-              { this.expenseCalculator(allExpenses) || 0 }
-            </span>
-            <span data-testid="header-currency-field">BRL</span>
-          </p>
+      <header className="wallet-header">
+        <p className="user-email">
+          Email:
+          <span className="email">{ userMail }</span>
+        </p>
+        <div className="header-title">
+          <img className="titleicon" src={ coins } alt="coins-icon" />
+          <h1 className="title">Wallet</h1>
         </div>
+        <p className="total-expense">
+          Despesa Total:
+          <span className="amount">
+            { this.expenseCalculator(allExpenses) || 0 }
+          </span>
+          <span className="amount">BRL</span>
+        </p>
       </header>
     );
   }
